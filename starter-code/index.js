@@ -8,22 +8,16 @@ class SortedList {
 
   add(item) {
     this.items.push(item);
+    this.items.sort((a,b) => {
+      return a-b;
+    })
+
     this.length++;
   }
 
   get(pos) {
 
-    let searchedItem;
-
-    // if index greater than array or negative , throw an error
-    if (pos > this.items.length || pos < 0) {
-      throw new Error("EmptySortedList");
-    }
-    else {
-      searchedItem = this.items[pos];
-    }
-
-    return searchedItem;
+    return this.items[pos];
 
   }
   max() { }
